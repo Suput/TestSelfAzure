@@ -25,15 +25,3 @@ steps:
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'testdocker'
-- task: CopyFiles@2
-  displayName: 'copy deploy artifact'
-  inputs:
-    SourceFolder: 'Deploy'
-    Contents: '**'
-    TargetFolder: '$(Build.ArtifactStagingDirectory)'
-    CleanTargetFolder: true
-- task: PublishBuildArtifacts@1
-  displayName: 'Publish Artifact: testdocker-deploy'
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'testdocker-deploy'
